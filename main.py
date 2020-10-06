@@ -1,4 +1,5 @@
-# Code is licensed under GPLv3
+# This code is licensed under the GPLv3 by Lorenzo Orders
+# https://www.gnu.org/licenses/gpl-3.0.en.html
 
 import json
 
