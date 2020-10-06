@@ -56,11 +56,11 @@ def findSecondLargest(collection):
     return minBound
     
 def main(args):
-    lyrics = args[1].lower()
+    lyrics = args[2].lower()
     # each element in storage contains [iters through strA, len of strB, tweet used]
     storage = []
-    print("Finding tweets to match:", args[1])
-    with open('tweets.json', encoding='utf-8') as f:
+    print("Finding tweets to match:", args[2])
+    with open(args[1], encoding='utf-8') as f:
         data = json.load(f)
         for tweet in data:
             result = longestLen(tweet["text"].lower(), lyrics)

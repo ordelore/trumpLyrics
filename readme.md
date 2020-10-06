@@ -9,8 +9,11 @@ Getting the Trump tweets is a little more involved. I have included the tweets I
 
 On the website, click the 'EXPORT' button and select the JSON option. Wait about a minute for the data to be processed before selecting the text in the above box and copy-pasting the text into a file named `tweets.json` in the same directory as `main.py`. You can use any website, or even other people as long as the tweets are formatted with a "text" field containing the text of an individual tweet, and an "id_str" field with that tweet's id.
 # Usage
-Run `python main.py <string>`
+Run `python main.py <tweet file> <string>`
 
+It's best to enclose your string within quotes to allow for multiple words to not get picked up as separate inputs
+
+Example: `python main.py tweets.json "Lorem ipsum dolor sit amet"`
 The output of this script is as follows:
 
 The first line is the original input string
@@ -26,8 +29,7 @@ The seventh line is a direct link to the specified tweet.
 ![enter image description here](https://i.imgur.com/qo6Y5uK.png)
 
 # Next steps
-Tweak the algorithm to not allow words to run-on into a new repetition of the tweet.
 
-Instead of hard-coding the name of the file, get the user to specify which file is the input JSON.
+Allow a text document to be read as input. Each line as a different tweet?
 
 It would be really nice to automate the creation of frames like in the music video, but that goes a bit beyond the scope of what I'm trying to accomplish.
