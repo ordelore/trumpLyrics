@@ -10,20 +10,28 @@ import json
 def longestLen(strA, strB):
     currentBchar = 0
     iterations = 0
+    wordStart = 0
     # if currentBchar is the length of strB, then all of strB can
     # be represented in strA
     
     # if all of strA is iterated through without changing currentBchar
-    # then the largest subset
+    # then the largest subset 
+
+    # if the tweet needs to be refreshed, go back to the start of the
+    # previous word in strB. This prevents words from running onto multiple
+    # tweets
     while (True):
-        startVal = currentBchar
+        startVal = wordStart
+        currentBchar = startVal
         iterations += 1
         for a in strA:
             if (a == strB[currentBchar]):
                 currentBchar += 1
                 if (currentBchar >= len(strB)):
                     return [iterations, len(strB)]
-        if (startVal == currentBchar and iterations > 1):
+            if (strB[currentBchar] == ' '):
+                wordStart = currentBchar + 1
+        if (startVal == wordStart and iterations > 1):
             return [iterations, startVal]
 
 # assuming that collection is sorted descending, this returns the index
