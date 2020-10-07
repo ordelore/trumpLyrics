@@ -87,6 +87,7 @@ def main(args):
     print("Length of constructed string:",storage[0][1])
     print("Times to cycle through tweet:",storage[0][0])
     print("URL:", "https://twitter.com/realDonaldTrump/status/" + storage[0][2]["id_str"])
+    print("This URL may no longer be accessible if Trump has since deleted this tweet.")
     
     return 0
 
