@@ -81,13 +81,23 @@ def main(args):
     # first print out the length of the input string
     # Print out name, use the ID to make a URL, the length of the new strB,
     # and the number of times to cycle through the tweet.
-    print("Closest tweet:", storage[0][2]["text"])
-    print("The next two numbers should be identical for best results")
-    print("Length of target string:",len(lyrics))
-    print("Length of constructed string:",storage[0][1])
-    print("Times to cycle through tweet:",storage[0][0])
-    print("URL:", "https://twitter.com/realDonaldTrump/status/" + storage[0][2]["id_str"])
-    print("This URL may no longer be accessible if Trump has since deleted this tweet.")
+    MAX_TWEETS = 5
+    printTweets = min(MAX_TWEETS, len(storage))
+    for i in range(printTweets):
+        tweet = storage[i]
+        dateString = tweet[2]["created_at"]
+        print("Best Tweet Number",i+1)
+        print("Closest tweet:", tweet[2]["text"])
+        print("The next two numbers should be identical for best results")
+        print("Length of target string:",len(lyrics))
+        print("Length of constructed string:",tweet[1])
+        print("Times to cycle through tweet:",tweet[0])
+        print("Time:", dateString[4:10] + ", " + dateString[26:30])
+        print("Likes:", tweet[2]["favorite_count"])
+        print("Retweets:", tweet[2]["retweet_count"])
+        print("URL:", "https://twitter.com/realdonaldtrump/status/" + tweet[2]["id_str"])
+        print("This URL may no longer be accessible if Trump has since deleted this tweet.")
+        print()
     
     return 0
 
